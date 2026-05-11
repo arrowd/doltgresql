@@ -226,7 +226,7 @@ func convertSQLStmts(stmts parser.Statements, params []pgnodes.RoutineParam) (st
 			StrVal: "", // must be empty string
 		}
 		// placeholder name is empty
-		if param.Name == "\"\"" {
+		if param.Name == "" {
 			n := fmt.Sprintf("$%d", i+1)
 			paramMap[n] = tv
 			params[i].Name = n
